@@ -1,0 +1,19 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ConsoleApp1/bin/Debug
+/ConsoleApp1/obj/Debug
+/packages/Microsoft.Bcl.AsyncInterfaces.6.0.0
+/packages/Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0
+/packages/Oracle.ManagedDataAccess.21.13.0
+/packages/System.Buffers.4.5.1
+/packages/System.Formats.Asn1.7.0.0
+/packages/System.Memory.4.5.5
+/packages/System.Numerics.Vectors.4.5.0
+/packages/System.Runtime.CompilerServices.Unsafe.6.0.0
+/packages/System.Text.Encodings.Web.6.0.0
+/packages/System.Text.Json.6.0.1
+/packages/System.Threading.Tasks.Extensions.4.5.4
+/packages/System.ValueTuple.4.5.0
+/ConsoleApp1/SqlServerTypes
