@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using Oracle.ManagedDataAccess.Client;
 using System;
+using System.Configuration;
 using System.Data;
 using System.IO;
 
@@ -12,7 +13,7 @@ namespace ConsoleApp1
         static DataTable setupDataTable()
         {
             OracleConnection connection = new OracleConnection();
-            connection.ConnectionString = "Data Source=development_esu8.world;Persist Security Info=True;User ID=admsystem;Password=ad9835A9;";
+            connection.ConnectionString = ConfigurationManager.ConnectionStrings["admsystem"].ConnectionString;
             connection.Open();
 
             System.Data.DataSet ds = new System.Data.DataSet("test_dataset");
