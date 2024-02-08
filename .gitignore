@@ -17,3 +17,6 @@
 /packages/System.Threading.Tasks.Extensions.4.5.4
 /packages/System.ValueTuple.4.5.0
 /ConsoleApp1/SqlServerTypes
+*.vsidx
+.vs/ReportingPOC/v17/.suo
+.vs/ReportingPOC/FileContentIndex/829e1cd3-1208-403c-891a-bc7aa95ec33e.vsidx
