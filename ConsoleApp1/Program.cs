@@ -1,17 +1,8 @@
 ﻿using Microsoft.Reporting.WinForms;
-using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
-using Microsoft.ReportingServices.Diagnostics.Internal;
+using System;
+using System.Data;
+using System.IO;
 
 
 namespace ConsoleApp1
