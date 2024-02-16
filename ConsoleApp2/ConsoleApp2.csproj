@@ -52,7 +52,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp1\ReportEngine.csproj">
+    <ProjectReference Include="..\ReportEngine\ReportEngine.csproj">
       <Project>{5241784e-0738-4115-b483-2a8b9f778dc3}</Project>
       <Name>ReportEngine</Name>
     </ProjectReference>
