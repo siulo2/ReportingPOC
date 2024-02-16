@@ -25,30 +25,41 @@ namespace ConsoleApp1
             return dt;
         }
 
+        static byte[] generate(string path, ReportDataSource[] ds, string format)
+        {
+            LocalReport lreport = new LocalReport();
+            lreport.ReportPath = path;
+            foreach (ReportDataSource d in ds)
+            {
+                lreport.DataSources.Add(d);
+            }
+            byte[] bytes = lreport.Render(format);
+            return bytes;
+        }
+
+        static string writefile(byte[] data, string path = null)
+        {
+            if (path == null)
+            {
+                path = Path.GetTempFileName();
+            }
+            FileStream fs = new FileStream(path, FileMode.Create);
+            fs.Write(data, 0, data.Length);
+            fs.Close();
+            return path;
+        }
+
         static void Main(string[] args)
         {
             SqlServerTypes.Utilities.LoadNativeAssemblies(AppDomain.CurrentDomain.BaseDirectory);
 
-            Console.WriteLine("Fetching data");
-            DataTable dataTable = setupDataTable();
+            ReportDataSource[] datasource = new ReportDataSource[] {
+                new ReportDataSource("test_dataset", setupDataTable())
+            };
 
-            Console.WriteLine("Preparing templates");
-            ReportDataSource ds = new ReportDataSource("test_dataset", dataTable);
-            LocalReport lreport = new LocalReport();
-            lreport.ReportPath = "C:/Users/siulo2/Documents/GitHub/ReportingPOC/WebApplication2/Report1.rdlc";
-            lreport.DataSources.Add(ds);
-
-            Console.WriteLine("Rendering");
-            byte[] bytes = lreport.Render("PDF");
-
-            Console.WriteLine("Wrting file");
-            DateTime d = DateTime.Now;            
-            string filename = "c:/temp/RDL-" + d.ToString("yyyyMMdd-HHmmss") + ".pdf";
-            FileStream fs = new FileStream(filename, FileMode.Create);
-            fs.Write(bytes, 0, bytes.Length);
-            fs.Close();
-
-            Console.WriteLine("Report generated to " + filename);
+            string report = "C:/Users/siulo2/Documents/GitHub/ReportingPOC/WebApplication2/Report1.rdlc";
+            string renderedfile = writefile(generate(report, datasource, "pdf"));
+            Console.WriteLine("Report generated to " +  renderedfile);
         }
     }
 }
