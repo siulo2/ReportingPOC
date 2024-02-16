@@ -2,8 +2,8 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/ConsoleApp1/bin/Debug
-/ConsoleApp1/obj/Debug
+/*/bin
+/*/obj
 /packages/Microsoft.Bcl.AsyncInterfaces.6.0.0
 /packages/Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0
 /packages/Oracle.ManagedDataAccess.21.13.0
